@@ -1,11 +1,12 @@
 <template>
   <div>
     <div
+      class="wrapp"
       v-for="(todo, id) in completedTodos"
       :key="todo.id"
       v-show="showCompletedTodos"
     >
-      <p>
+      <div>
         <span
           class="todo__text"
           :class="{ todo__text_isShow: todo.isCompleted }"
@@ -15,13 +16,12 @@
         <input
           class="todo__check"
           type="checkbox"
-          checked
           @click="unCheckСompleted(id)"
         />
         <button class="todo__text_delete-btn" @click="deleteCompletedTodo(id)">
           <span class="todo__text_delete-btn-text">Delete</span>
         </button>
-      </p>
+      </div>
     </div>
   </div>
 </template>
